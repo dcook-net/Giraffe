@@ -55,6 +55,7 @@ let webApp (bookingSystemHttpClient:HttpClient) =
             route "/processMsg" >=> bind<BookingRequest> (reserveTable bookingSystemHttpClient)
            ]
 
+//TODO: Replace class with functions.
 type Startup() =
     member _.ConfigureServices (services : IServiceCollection) =
         services.AddGiraffe() |> ignore
